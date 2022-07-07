@@ -1,0 +1,13 @@
+{
+	"name": "GIT",
+	"properties": {
+		"description": "Git onde deixei o arquivo CSV",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/AnselmoBorges/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
