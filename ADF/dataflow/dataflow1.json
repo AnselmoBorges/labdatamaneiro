@@ -3,22 +3,11 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [
-				{
-					"dataset": {
-						"referenceName": "datalab_dl",
-						"type": "DatasetReference"
-					},
-					"name": "teste"
-				}
-			],
+			"sources": [],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'arrayOfDocuments') ~> teste"
+				""
 			]
 		}
 	}
