@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "AnselmoBorges/labdatamaneiro/blob/77b820cc0691e88dc2ede35ac8619e2b781ed2bc/citypopulation.csv"
+				"relativeUrl": "citypopulation.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
