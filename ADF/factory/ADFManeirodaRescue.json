@@ -1,0 +1,9 @@
+{
+	"name": "ADFManeirodaRescue",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3980034e-7a03-4828-b540-31a51043d9b7",
+		"tenantId": "ecc20301-521f-4c28-b710-a014f160a6a4"
+	}
+}
