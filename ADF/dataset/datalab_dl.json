@@ -1,0 +1,19 @@
+{
+	"name": "datalab_dl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lakelab",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "employees",
+				"fileSystem": "labdata"
+			}
+		},
+		"schema": {}
+	}
+}
