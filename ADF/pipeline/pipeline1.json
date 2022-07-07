@@ -43,69 +43,7 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['status']"
-								},
-								"sink": {
-									"path": "status"
-								}
-							},
-							{
-								"source": {
-									"path": "$['data'][0]['id']"
-								},
-								"sink": {
-									"path": "id"
-								}
-							},
-							{
-								"source": {
-									"path": "$['data'][0]['employee_name']"
-								},
-								"sink": {
-									"path": "nome"
-								}
-							},
-							{
-								"source": {
-									"path": "$['data'][0]['employee_salary']"
-								},
-								"sink": {
-									"path": "salario"
-								}
-							},
-							{
-								"source": {
-									"path": "$['data'][0]['employee_age']"
-								},
-								"sink": {
-									"path": "idade"
-								}
-							},
-							{
-								"source": {
-									"path": "$['data'][0]['profile_image']"
-								},
-								"sink": {
-									"path": "imagem"
-								}
-							},
-							{
-								"source": {
-									"path": "$['message']"
-								},
-								"sink": {
-									"path": "mensagem"
-								}
-							}
-						],
-						"collectionReference": ""
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
@@ -119,6 +57,37 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Pega dados do Empregado",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []
