@@ -9,7 +9,7 @@
 						"referenceName": "datalab_dl",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "Json"
 				}
 			],
 			"sinks": [],
@@ -18,7 +18,7 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine') ~> source1"
+				"     documentForm: 'documentPerLine') ~> Json"
 			]
 		}
 	}
