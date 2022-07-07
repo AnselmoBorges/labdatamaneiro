@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/AnselmoBorges/",
+			"url": "https://github.com/AnselmoBorges/labdatamaneiro/blob/main/citypopulation.csv",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
