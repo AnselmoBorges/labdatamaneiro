@@ -6,7 +6,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.brasil.io/v1/dataset/covid19/caso_full/data/",
+			"url": "https://api.brasil.io/v1/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous",
 			"authHeaders": {
