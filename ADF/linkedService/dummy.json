@@ -1,0 +1,13 @@
+{
+	"name": "dummy",
+	"properties": {
+		"description": "Pega dados do Dummy API",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://dummy.restapiexample.com/api/v1/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
