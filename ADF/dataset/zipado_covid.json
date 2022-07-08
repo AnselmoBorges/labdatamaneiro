@@ -10,7 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "dataset/covid19/caso_full.csv.gz"
+				"relativeUrl": "caso_full.csv.gz"
+			},
+			"compression": {
+				"type": "gzip",
+				"level": "Optimal"
 			}
 		}
 	}
