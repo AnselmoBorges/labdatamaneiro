@@ -6,18 +6,45 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "csvzip",
+						"referenceName": "covid",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "covidfull"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          city as string,",
+				"          city_ibge_code as string,",
+				"          date as string,",
+				"          epidemiological_week as string,",
+				"          estimated_population as string,",
+				"          estimated_population_2019 as string,",
+				"          is_last as string,",
+				"          is_repeated as string,",
+				"          last_available_confirmed as string,",
+				"          last_available_confirmed_per_100k_inhabitants as string,",
+				"          last_available_date as string,",
+				"          last_available_death_rate as string,",
+				"          last_available_deaths as string,",
+				"          order_for_place as string,",
+				"          place_type as string,",
+				"          state as string,",
+				"          new_confirmed as string,",
+				"          new_deaths as string",
+				"     ),",
+				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false,",
+				"     partitionBy('hash', 1)) ~> covidfull",
+				"covidfull split(city == 'Rio Branco',",
+				"     disjoint: true) ~> split1@(soriobranco, resto)"
 			]
 		}
 	}
