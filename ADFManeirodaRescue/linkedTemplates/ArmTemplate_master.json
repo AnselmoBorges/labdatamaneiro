@@ -33,7 +33,7 @@
 		},
 		"brasil_io_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://data.brasil.io/"
+			"defaultValue": "https://data.brasil.io/dataset/covid19/"
 		},
 		"containerUri": {
 			"type": "string",
