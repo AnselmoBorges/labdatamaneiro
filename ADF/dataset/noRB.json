@@ -1,0 +1,22 @@
+{
+	"name": "noRB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lakelab",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "noRB.csv",
+				"fileSystem": "labdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
