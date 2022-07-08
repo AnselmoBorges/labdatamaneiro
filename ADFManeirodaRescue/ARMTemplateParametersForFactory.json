@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFManeirodaRescue"
+		},
+		"lakelab_accountKey": {
+			"value": ""
+		},
+		"Meu GitHub_credential": {
+			"value": ""
+		},
+		"lakelab_properties_typeProperties_url": {
+			"value": "https://areadestoragerescue.dfs.core.windows.net/"
+		},
+		"GIT_properties_typeProperties_url": {
+			"value": "https://github.com/AnselmoBorges/labdatamaneiro/blob/77b820cc0691e88dc2ede35ac8619e2b781ed2bc/"
+		},
+		"RestGit_properties_typeProperties_url": {
+			"value": "https://gihub.com"
+		},
+		"Meu GitHub_properties_typeProperties_username": {
+			"value": "anselmoborges@gmail.com"
+		},
+		"brasil_io_properties_typeProperties_url": {
+			"value": "https://data.brasil.io/"
+		}
+	}
+}

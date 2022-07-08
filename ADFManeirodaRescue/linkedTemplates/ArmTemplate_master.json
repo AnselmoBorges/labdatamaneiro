@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFManeirodaRescue"
+		},
+		"lakelab_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lakelab'"
+		},
+		"Meu GitHub_credential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'credential' of 'Meu GitHub'"
+		},
+		"lakelab_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://areadestoragerescue.dfs.core.windows.net/"
+		},
+		"GIT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/AnselmoBorges/labdatamaneiro/blob/77b820cc0691e88dc2ede35ac8619e2b781ed2bc/"
+		},
+		"RestGit_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://gihub.com"
+		},
+		"Meu GitHub_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "anselmoborges@gmail.com"
+		},
+		"brasil_io_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.brasil.io/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADFManeirodaRescue_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lakelab_accountKey": {
+						"value": "[parameters('lakelab_accountKey')]"
+					},
+					"Meu GitHub_credential": {
+						"value": "[parameters('Meu GitHub_credential')]"
+					},
+					"lakelab_properties_typeProperties_url": {
+						"value": "[parameters('lakelab_properties_typeProperties_url')]"
+					},
+					"GIT_properties_typeProperties_url": {
+						"value": "[parameters('GIT_properties_typeProperties_url')]"
+					},
+					"RestGit_properties_typeProperties_url": {
+						"value": "[parameters('RestGit_properties_typeProperties_url')]"
+					},
+					"Meu GitHub_properties_typeProperties_username": {
+						"value": "[parameters('Meu GitHub_properties_typeProperties_username')]"
+					},
+					"brasil_io_properties_typeProperties_url": {
+						"value": "[parameters('brasil_io_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
