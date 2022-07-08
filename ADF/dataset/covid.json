@@ -18,6 +18,79 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "city_ibge_code",
+				"type": "String"
+			},
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "epidemiological_week",
+				"type": "String"
+			},
+			{
+				"name": "estimated_population",
+				"type": "String"
+			},
+			{
+				"name": "estimated_population_2019",
+				"type": "String"
+			},
+			{
+				"name": "is_last",
+				"type": "String"
+			},
+			{
+				"name": "is_repeated",
+				"type": "String"
+			},
+			{
+				"name": "last_available_confirmed",
+				"type": "String"
+			},
+			{
+				"name": "last_available_confirmed_per_100k_inhabitants",
+				"type": "String"
+			},
+			{
+				"name": "last_available_date",
+				"type": "String"
+			},
+			{
+				"name": "last_available_death_rate",
+				"type": "String"
+			},
+			{
+				"name": "last_available_deaths",
+				"type": "String"
+			},
+			{
+				"name": "order_for_place",
+				"type": "String"
+			},
+			{
+				"name": "place_type",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "new_confirmed",
+				"type": "String"
+			},
+			{
+				"name": "new_deaths",
+				"type": "String"
+			}
+		]
 	}
 }
