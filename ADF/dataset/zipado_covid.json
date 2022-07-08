@@ -1,0 +1,17 @@
+{
+	"name": "zipado_covid",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "brasil_io",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "dataset/covid19/caso_full.csv.gz"
+			}
+		}
+	}
+}
