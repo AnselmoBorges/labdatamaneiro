@@ -9,42 +9,91 @@
 						"referenceName": "covid",
 						"type": "DatasetReference"
 					},
-					"name": "covidfull"
+					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "RBCovid",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				},
+				{
+					"dataset": {
+						"referenceName": "noRB",
+						"type": "DatasetReference"
+					},
+					"name": "sink2"
+				}
+			],
 			"transformations": [
 				{
-					"name": "split1"
+					"name": "TirandoRioBranco"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
 				"          city as string,",
 				"          city_ibge_code as string,",
-				"          date as string,",
+				"          date as date 'dd/MM/yyyy',",
 				"          epidemiological_week as string,",
-				"          estimated_population as string,",
-				"          estimated_population_2019 as string,",
+				"          estimated_population as integer,",
+				"          estimated_population_2019 as integer,",
 				"          is_last as string,",
 				"          is_repeated as string,",
 				"          last_available_confirmed as string,",
 				"          last_available_confirmed_per_100k_inhabitants as string,",
 				"          last_available_date as string,",
-				"          last_available_death_rate as string,",
-				"          last_available_deaths as string,",
+				"          last_available_death_rate as double,",
+				"          last_available_deaths as integer,",
 				"          order_for_place as string,",
 				"          place_type as string,",
 				"          state as string,",
-				"          new_confirmed as string,",
-				"          new_deaths as string",
+				"          new_confirmed as integer,",
+				"          new_deaths as integer",
 				"     ),",
-				"     allowSchemaDrift: false,",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     partitionBy('hash', 1)) ~> covidfull",
-				"covidfull split(city == 'Rio Branco',",
-				"     disjoint: true) ~> split1@(soriobranco, resto)"
+				"     partitionBy('hash', 1)) ~> source1",
+				"source1 split(city == 'Rio Branco',",
+				"     disjoint: true) ~> TirandoRioBranco@(RB, noRB)",
+				"TirandoRioBranco@RB sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string,",
+				"          Column_8 as string,",
+				"          Column_9 as string,",
+				"          Column_10 as string,",
+				"          Column_11 as string,",
+				"          Column_12 as string,",
+				"          Column_13 as string,",
+				"          Column_14 as string,",
+				"          Column_15 as string,",
+				"          Column_16 as string,",
+				"          Column_17 as string,",
+				"          Column_18 as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1",
+				"TirandoRioBranco@noRB sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink2"
 			]
 		}
 	}
